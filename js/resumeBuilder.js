@@ -77,11 +77,31 @@ var education = {
 
 var work = {
   jobs:
-    [{employer: "Impact Fulfillment Services", title: "Application Developer", location: "Burlington, NC", dates: "08/2015-In Progress"},
-    {employer: "UNC", title: "Help", location: "Chapel Hill, NC", dates: "08/2013-2015" }],
+    [{employer: "Impact Fulfillment Services", title: "Application Developer", location: "Burlington, NC", dates: "08/2015-In Progress", description: "description..."},
+    {employer: "UNC", title: "Help", location: "Chapel Hill, NC", dates: "08/2013-2015", description: "description..." }],
 
 display: function () {
-        $("#education").append(HTMLonlineClasses);
+
+  var myEmployer = HTMLworkEmployer.replace("%data%",work.jobs[0].employer);
+  var myTitle = HTMLworkTitle.replace("%data%",work.jobs[0].title);
+  var myDates = HTMLworkDates.replace("%data%",work.jobs[0].dates);
+  var myWorkLocation = HTMLworkLocation.replace("%data%",work.jobs[0].location);
+  var myWorkDescription = HTMLworkDescription.replace("%data%",work.jobs[0].location.description);
+  
+  $("#workExperience").append(HTMLworkStart);
+  $(".work-entry:last").append(myEmployer);
+  $(".work-entry:last").append(myTitle);
+  $(".work-entry:last").append(myDates);
+  $(".work-entry:last").append(myWorkLocation);
+  $(".work-entry:last").append(myWorkDescription);
+
+/*  var HTMLworkStart = '<div class="work-entry"></div>';
+  var HTMLworkEmployer = '<a href="#">%data%';
+  var HTMLworkTitle = ' - %data%</a>';
+  var HTMLworkDates = '<div class="date-text">%data%</div>';
+  var HTMLworkLocation = '<div class="location-text">%data%</div>';
+  var HTMLworkDescription = '<p><br>%data%</p>'; */
+
     }
 
 
@@ -89,5 +109,5 @@ display: function () {
 
 
     bio.display();
+   work.display();
     education.display();
-    work.display().
