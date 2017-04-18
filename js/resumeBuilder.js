@@ -90,3 +90,4 @@ display: function () {
 
     bio.display();
     education.display();
+    work.display().
