@@ -29,7 +29,7 @@ var bio = {
 
 var education = {
   schools: [ {
-    name: "The University of North Carolina at Chapel Hill",
+    name: "The University of North Carolina at Chapel Hill ",
     location: "Chapel Hill, NC",
     degree: "B.S. Computer Science",
     majors: ["Computer Science"],
