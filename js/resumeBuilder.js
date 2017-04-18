@@ -1,5 +1,5 @@
 /*
-This is empty on purpose! Your code to build the resume will go here.
+This is empty on purpose! Your code to build the resume will go here. TEST TEST
 */
 
 var bio = {
@@ -23,7 +23,6 @@ var bio = {
     var myLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#header").prepend(myName,myRole);
     $("#topContacts").append(myMobile,myEmail,myGithub,myLocation);
-
   }
 }
 
