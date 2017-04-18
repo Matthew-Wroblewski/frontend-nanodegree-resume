@@ -27,13 +27,9 @@ var bio = {
 }
 
 var education = {
-  schools: [ {
-    name: "The University of North Carolina at Chapel Hill",
-    location: "Chapel Hill, NC",
-    degree: "B.S. Computer Science",
-    majors: ["Computer Science"],
-    dates: "08/2013-/07/2015",
-    url: "" } ],
+  schools:
+    [{name: "The University of North Carolina at Chapel Hill", location: "Chapel Hill, NC", degree: "B.S. Computer Science",
+    majors: ["Computer Science"], dates: "08/2013-/07/2015", url: ""}],
 
     onlineCourses: [ {
       title: "Front-End Web Developer Nanodegree Program",
@@ -78,6 +74,18 @@ var education = {
         }
       }
     }
+
+var work = {
+  jobs:
+    [{employer: "Impact Fulfillment Services", title: "Application Developer", location: "Burlington, NC", dates: "08/2015-In Progress"},
+    {employer: "UNC", title: "Help", location: "Chapel Hill, NC", dates: "08/2013-2015" }],
+
+display: function () {
+        $("#education").append(HTMLonlineClasses);
+    }
+
+
+}
 
 
     bio.display();
