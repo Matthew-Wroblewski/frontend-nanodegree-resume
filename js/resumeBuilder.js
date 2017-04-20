@@ -28,86 +28,120 @@ var bio = {
 
 var education = {
   schools:
-    [{name: "The University of North Carolina at Chapel Hill", location: "Chapel Hill, NC", degree: "B.S. Computer Science",
-    majors: ["Computer Science"], dates: "08/2013-/07/2015", url: ""}],
+  [{name: "The University of North Carolina at Chapel Hill",
+  location: "Chapel Hill, NC",
+  degree: "B.S. Computer Science",
+  majors: ["Computer Science"],
+  dates: "08/2013-/07/2015",
+  url: "http://www.unc.edu"}],
 
-    onlineCourses: [ {
-      title: "Front-End Web Developer Nanodegree Program",
-      school: "Udacity",
-      dates: "04/2017-Current",
-      url: "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001" } ],
-      display: function () {
-        if (education.schools.length > 0 || education.onlineCourse.length > 0) {
-          $("#education").append(HTMLschoolStart);
+  onlineCourses: [{
+    title: "Front-End Web Developer Nanodegree Program",
+    school: "Udacity",
+    dates: "04/2017-Current",
+    url: "http://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"}],
 
-          for (i = 0; i < education.schools.length; i++) {
+    display: function () {
 
-            var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
-            var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-            var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
-            var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
-            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+        $("#education").append(HTMLschoolStart);
 
-            $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
-            $(".education-entry:last").append(formattedSchoolDates);
-            $(".education-entry:last").append(formattedSchoolLocation);
-            $(".education-entry:last").append(formattedSchoolMajor);
+        for (i = 0; i < education.schools.length; i++) {
 
-          }
+          var mySchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
+          var mySchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+          var mySchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+          var mySchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+          var mySchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
 
-          if(education.onlineCourses.length > 0) {
-            $("#education").append(HTMLonlineClasses);
-
-            for(i = 0; i < education.schools.length; i++) {
-
-              $("#education").append(HTMLschoolStart);
-              var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
-              var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-              var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-              var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
-              $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
-              $(".education-entry:last").append(formattedOnlineDates);
-              $(".education-entry:last").append(formattedOnlineURL);
-            }
-          }
+          $(".education-entry:last").append(mySchoolName + mySchoolDegree);
+          $(".education-entry:last").append(mySchoolDates);
+          $(".education-entry:last").append(mySchoolLocation);
+          $(".education-entry:last").append(mySchoolMajor);
 
         }
-      }
+
+          $("#education").append(HTMLonlineClasses);
+
+          for(i = 0; i < education.schools.length; i++) {
+
+            $("#education").append(HTMLschoolStart);
+            var myOnlineProgram = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
+            var myOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+            var myOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+            var myOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
+            $(".education-entry:last").append(myOnlineProgram + myOnlineSchool);
+            $(".education-entry:last").append(myOnlineDates);
+            $(".education-entry:last").append(myOnlineURL);
+          }
     }
+  }
 
 var work = {
   jobs:
-    [{employer: "Impact Fulfillment Services", title: "Application Developer", location: "Burlington, NC", dates: "08/2015-In Progress", description: "description..."},
-    {employer: "UNC", title: "Help", location: "Chapel Hill, NC", dates: "08/2013-2015", description: "description..." }],
+  [{employer: "Impact Fulfillment Services",
+  title: "Application Developer",
+  location: "Burlington, NC",
+  dates: "08/2015-In Progress",
+  description: "description..."},
 
-display: function () {
+  {employer: "UNC",
+  title: "Help",
+  location: "Chapel Hill, NC",
+   dates: "08/2013-2015",
+   description: "description..." }],
 
-  var myEmployer = HTMLworkEmployer.replace("%data%",work.jobs[0].employer);
-  var myTitle = HTMLworkTitle.replace("%data%",work.jobs[0].title);
-  var myDates = HTMLworkDates.replace("%data%",work.jobs[0].dates);
-  var myWorkLocation = HTMLworkLocation.replace("%data%",work.jobs[0].location);
-  var myWorkDescription = HTMLworkDescription.replace("%data%",work.jobs[0].location.description);
-  
-  $("#workExperience").append(HTMLworkStart);
-  $(".work-entry:last").append(myEmployer);
-  $(".work-entry:last").append(myTitle);
-  $(".work-entry:last").append(myDates);
-  $(".work-entry:last").append(myWorkLocation);
-  $(".work-entry:last").append(myWorkDescription);
+  display: function () {
 
-/*  var HTMLworkStart = '<div class="work-entry"></div>';
-  var HTMLworkEmployer = '<a href="#">%data%';
-  var HTMLworkTitle = ' - %data%</a>';
-  var HTMLworkDates = '<div class="date-text">%data%</div>';
-  var HTMLworkLocation = '<div class="location-text">%data%</div>';
-  var HTMLworkDescription = '<p><br>%data%</p>'; */
+      $("#workExperience").append(HTMLworkStart);
 
-    }
+      for (i = 0; i < work.jobs.length; i++) {
 
+        var myEmployer = HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
+        var myTitle = HTMLworkTitle.replace("%data%",work.jobs[i].title);
+        var myDates = HTMLworkDates.replace("%data%",work.jobs[i].dates);
+        var myWorkLocation = HTMLworkLocation.replace("%data%",work.jobs[i].location);
+        var myWorkDescription = HTMLworkDescription.replace("%data%",work.jobs[i].description);
 
+        $(".work-entry:last").append(myEmployer);
+        $(".work-entry:last").append(myTitle);
+        $(".work-entry:last").append(myDates);
+        $(".work-entry:last").append(myWorkLocation);
+        $(".work-entry:last").append(myWorkDescription);
+
+      }
+  }
+}
+
+var projects = {
+
+projects:
+  [{title: "Online Resume",
+  dates:"Dates",
+  description:"Online Project desc",
+images: ["www.unc.edu"]}],
+
+  display: function () {
+
+    $("#projects").append(HTMLprojectStart);
+
+      for (i = 0; i < projects.projects.length; i++) {
+
+        var myProjTitle = HTMLprojectTitle.replace("%data%",projects.projects[i].title);
+        var myProjDates = HTMLprojectDates.replace("%data%",projects.projects[i].dates);
+        var myProjDescr = HTMLworkDates.replace("%data%",projects.projects[i].description);
+        var myProjImages = HTMLprojectDescription.replace("%data%",projects.projects[i].images);
+
+        $(".project-entry:last").append(myProjTitle);
+        $(".project-entry:last").append(myProjDates);
+        $(".project-entry:last").append(myProjDescr);
+        $(".project-entry:last").append(myProjImages);
+  }
+
+}
 }
 
 
-    bio.display();
-   work.display();
-    education.display();
+  bio.display();
+  work.display();
+  education.display();
+  projects.display();
