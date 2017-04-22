@@ -28,13 +28,14 @@ var bio = {
     var myWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").prepend(myName,myRole);
     $("#topContacts").append(myMobile, myEmail, myTwitter, myGithub, myLocation);
+    $("#footerContacts").append(myMobile, myEmail, myTwitter, myGithub, myLocation);
     $("#header").append(myBioPic, myWelcomeMsg);
     $("#header").append(HTMLskillsStart);
     for(i = 0; i < bio.skills.length; i++) {
-		  $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
-	}
+      $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+    }
+ }
 
-  }
 };
 
 var education = {
@@ -145,8 +146,8 @@ var education = {
         $(".project-entry:last").append(myProjDescr);
 
         for (j = 0; j < projects.projects[i].images.length; j++) {
-            var myProjImages = HTMLprojectImage.replace("%data%",projects.projects[i].images[j]);
-            $(".project-entry:last").append(myProjImages);
+          var myProjImages = HTMLprojectImage.replace("%data%",projects.projects[i].images[j]);
+          $(".project-entry:last").append(myProjImages);
         }
       }
 
